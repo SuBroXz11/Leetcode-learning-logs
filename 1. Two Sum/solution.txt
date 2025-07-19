@@ -1,0 +1,16 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    const seenNumber = new Map();
+    for ( let i = 0; i < nums.length; i++ ){
+        const currentNumber = nums[i];
+        const numberToFind = target - nums[i];
+        if( seenNumber.has(numberToFind) ){
+            return [ seenNumber.get( numberToFind ), i ];
+        }
+        seenNumber.set( currentNumber , i )
+    }
+};
