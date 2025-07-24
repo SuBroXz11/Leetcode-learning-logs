@@ -1,0 +1,16 @@
+/**
+ * @param {string} inputString
+ * @return {boolean}
+ */
+var isPalindrome = function(inputString) {
+    let cleanString = '';
+    for (let char of inputString){
+        let lowerChar = char.toLowerCase();
+        if( (lowerChar >= 'a' && lowerChar <= "z") || 
+        lowerChar >= '0' && lowerChar <= '9' ){
+            cleanString += lowerChar;
+        }
+    }
+    let reversed = cleanString.split("").reverse().join("");
+    return cleanString === reversed;
+};
