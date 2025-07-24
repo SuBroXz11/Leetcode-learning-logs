@@ -1,0 +1,29 @@
+/**
+ * @param {string} firstWord
+ * @param {string} secondWord
+ * @return {boolean}
+ */
+var isAnagram = function(firstWord, secondWord) {
+    if ( firstWord.length !== secondWord.length) return false;
+
+    const frequencyMap = {};
+    
+    for( let letter of firstWord ){
+        if(frequencyMap[letter]){
+            frequencyMap[letter]++;
+        }else{
+            frequencyMap[letter] = 1;
+        }
+    }
+
+    for ( let letter of secondWord ){
+        if(!frequencyMap[letter]){
+            return false;
+        }else{
+            frequencyMap[letter]--;
+        }
+    }
+
+    return true;
+
+};
